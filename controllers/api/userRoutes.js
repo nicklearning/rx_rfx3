@@ -54,35 +54,39 @@ router.get('/createAccount', (req, res) => {
     res.render('createAccount');
 });
 
-
-router.post('/', async (req, res) => {
+router.post('/createAccount', async (req, res) => {
     try {
-        const userData = await User.create({
-            first_name: req.body.first_name,
-            last_name: req.body.last_name,
-            date_of_birth: req.body.date_of_birth,
+        const userData = {
+            firstName: req.body.firstName,
+            middleName: req.body.middleName,
+            lastName: req.body.lastName,
+            dateOfBirth: req.body.dateOfBirth,
             gender: req.body.gender,
             height: req.body.height,
             weight: req.body.weight,
             email: req.body.email,
-            street: req.body.street,
-            apt_unit_number: req.body.apt_unit_number,
+            password: req.body.password,
+            address1: req.body.address1,
+            address2: req.body.address2,
             city: req.body.city,
             state: req.body.state,
-            zip_code: req.body.zip_code,
-            phone_1: req.body.phone_1,
-            phone_2: req.body.phone_2,
-            userId: req.body.userId,
-        });
-        res.status(200).json(userData);
-    }   catch (err) {
-        res.status(400).json(err);
+            zipcode: req.body.zipcode,
+            phone1: req.body.phone1,
+            phone2: req.body.phone2
+        };
+
+        const newUser = await User.create(userData);
+
+        res.status(201).json(newUser);
+    } catch (error) {
+        console.error("Error creating user:", error);
+        res.status(500).json({ error: "Internal server error" });
     }
 });
 
 module.exports = router;
 
-router.put('/:id', async (req,res) => {
+router.put('/:id', async (req, res) => {
     try {
         const user = await User.update(
             {
@@ -108,7 +112,7 @@ router.put('/:id', async (req,res) => {
             }
         );
         res.status(200).json(user);
-    }   catch (err) {
+    } catch (err) {
         res.status(500).json(err);
     }
 });
@@ -132,7 +136,7 @@ router.get('/', async (req, res) => {
         // res.render('userpage', {
         //     users,
         // });
-    }   catch (err) {
+    } catch (err) {
         console.log(err);
         res.status(500).json(err);
     }
@@ -171,7 +175,7 @@ router.get('/user/:id', async (req, res) => {
 
         const user = dbUserData.get({ plain: true });
         res.render('user', { user });
-    }   catch (err) {
+    } catch (err) {
         console.log(err);
         res.status(500).json(err);
     }
@@ -190,7 +194,7 @@ router.delete('/:id', async (req, res) => {
             }
         );
         res.status(200).json(user);
-    }   catch (err) {
+    } catch (err) {
         res.status(500).json(err);
     }
 });
