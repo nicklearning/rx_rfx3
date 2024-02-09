@@ -1,0 +1,67 @@
+[
+    {
+        "name": "Ampicillin",
+        "dosage": "250mg",
+        "monday": true,
+        "tuesday": true,
+        "wednesday": true,
+        "thursday": true,
+        "friday": false,
+        "saturday": true,
+        "sunday": false,
+        "inUse": true,
+        "user_id": "2"
+    },
+    {
+        "name": "Ibuprofen",
+        "dosage": "200mg",
+        "monday": true,
+        "tuesday": false,
+        "wednesday": true,
+        "thursday": false,
+        "friday": true,
+        "saturday": false,
+        "sunday": false,
+        "inUse": false,
+        "user_id": "1"
+    },
+    {
+        "name": "Ciprofloxacin",
+        "dosage": "500mg",
+        "monday": true,
+        "tuesday": true,
+        "wednesday": true,
+        "thursday": true,
+        "friday": true,
+        "saturday": false,
+        "sunday": false,
+        "inUse": true,
+        "user_id": "1"
+    },
+    {
+        "name": "Aspirin",
+        "dosage": "75mg",
+        "monday": true,
+        "tuesday": true,
+        "wednesday": false,
+        "thursday": true,
+        "friday": false,
+        "saturday": false,
+        "sunday": true,
+        "inUse": false,
+        "user_id": "2"
+    },
+    {
+        "name": "Levothyroxine",
+        "dosage": "50mcg",
+        "monday": true,
+        "tuesday": false,
+        "wednesday": true,
+        "thursday": false,
+        "friday": true,
+        "saturday": false,
+        "sunday": false,
+        "inUse": true,
+        "user_id": "2"
+    }
+]
