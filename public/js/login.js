@@ -12,7 +12,7 @@ const loginFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace('/'); // GETS the / endpoint
+      document.location.replace('/dashboard'); // GETS the /dashboard endpoint
     } else {
       alert('Failed to log in');
     }

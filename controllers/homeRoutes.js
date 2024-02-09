@@ -12,14 +12,17 @@ router.get('/', async (req, res) => {
     }
 });
 
-router.get('/login', (req, res) => {
-    // If a session exists, redirect the request to the homepage
-    if (req.session.logged_in) {
-        res.redirect('/');
-        return;
+router.get('/dashboard', async (req, res) => {
+    try {
+        const logged_in = req.session.logged_in;
+        console.log(logged_in);
+        res.render('dashboard', {
+            logged_in
+        });
+    } catch (err) {
+        res.status(500).json(err);
     }
-
-    res.render('login');
 });
+
 
 module.exports = router;
