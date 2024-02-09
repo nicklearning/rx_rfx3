@@ -3,16 +3,21 @@
   box-sizing: border-box;
 }
 
-body, html {
+body,
+html {
   margin: 0;
   padding: 0;
-  font-family: "Inter", sans-serif; /* Consistent font family */
-  font-weight: normal; /* Use normal weight by default */
+  font-family: "Inter", sans-serif;
+  /* Consistent font family */
+  font-weight: normal;
+  /* Use normal weight by default */
   background-image: url("https://img.pikbest.com/ai/illus_our/20230427/0c42c5a3a0ba2cdccd0feffd86f76a8e.jpg!sw800");
-  background-size: cover; /* Cover ensures the background image fully covers the area */
+  background-size: cover;
+  /* Cover ensures the background image fully covers the area */
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: fixed; /* Keeps the background stationary during scroll */
+  background-attachment: fixed;
+  /* Keeps the background stationary during scroll */
 }
 
 /* Header */
@@ -23,7 +28,7 @@ body, html {
   padding: 0 20px;
   background-color: #ca5513;
   color: #ffffff;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3); 
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
 }
 
 .title-logo {
@@ -38,7 +43,8 @@ body, html {
   position: relative;
 }
 
-.menu-icon::before, .menu-icon::after {
+.menu-icon::before,
+.menu-icon::after {
   content: '';
   position: absolute;
   width: 100%;
@@ -58,18 +64,22 @@ body, html {
 .login-page {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Center align items */
-  justify-content: center; /* Center justify content */
+  align-items: center;
+  /* Center align items */
+  justify-content: center;
+  /* Center justify content */
   width: 100%;
   max-width: 500px;
-  margin: 0 auto; /* Centering horizontally */
+  margin: 0 auto;
+  /* Centering horizontally */
   color: #000000;
   text-align: center;
-  font-family: "Inter", sans-serif; /* Consistency in font family */
+  font-family: "Inter", sans-serif;
+  /* Consistency in font family */
   font-size: 12px;
   font-weight: 700;
-  position: relative; 
-  padding: 20px; 
+  position: relative;
+  padding: 20px;
 }
 
 .login-form {
@@ -79,14 +89,19 @@ body, html {
   border: 1px solid #000000;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   padding: 20px;
+  flex: 1;
+  /* Or adjust this according to your layout needs */
+  min-width: 250px;
 }
 
-.input, .button {
+.input,
+.button {
   margin: 10px 0;
   padding: 10px;
   border: 1px solid #000000;
   border-radius: 5px;
-  width: calc(100% - 20px); /* Adjust width to be responsive within the form */
+  width: calc(100% - 20px);
+  /* Adjust width to be responsive within the form */
 }
 
 .button-container {
@@ -95,7 +110,9 @@ body, html {
   margin: 10px 0;
 }
 
-.submit-button, .create-account, .forgot-password {
+.submit-button,
+.create-account,
+.forgot-password {
   background: #d9d9d9;
   cursor: pointer;
   transition: background-color 0.3s;
@@ -105,7 +122,9 @@ body, html {
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
 }
 
-.submit-button:hover, .create-account:hover, .forgot-password:hover {
+.submit-button:hover,
+.create-account:hover,
+.forgot-password:hover {
   background-color: #000000;
   color: #ca5513;
 }
@@ -113,88 +132,51 @@ body, html {
 /* Media Queries for Responsive Adjustments */
 @media (max-width: 768px) {
   .title-logo {
-    font-size: 24px; /* Smaller font size for smaller screens */
+    font-size: 24px;
+    /* Smaller font size for smaller screens */
   }
 
   .menu-icon {
-    width: 25px; /* Slightly smaller menu icon for compactness */
+    width: 25px;
+    /* Slightly smaller menu icon for compactness */
   }
 
-  /* Adjust layout for smaller screens */
-  .login-form, .patient-form {
-    padding: 0 15px; /* Add padding to improve readability */
-    max-width: none; /* Remove max-width to allow full width */
-  }
-
-  .input,
-  .button {
-    width: 100%; /* Set input and button width to full for better responsiveness */
-  }
-
-  /* Additional specific adjustments as needed */
-  .login-form .input,
-  .patient-form .input {
-    margin-bottom: 15px; /* Increase margin bottom for input fields */
-  }
-
-  .login-form .button-container,
-  .patient-form .button-container {
-    flex-direction: column; /* Stack buttons vertically on smaller screens */
-  }
-
-  .login-form .button,
-  .patient-form .button {
-    margin: 10px 0; /* Adjust button margin for better spacing */
+  .login-form,
+  .patient-form {
+    max-width: 100%;
+    /* Allows the form to expand to the full width of smaller screens */
   }
 }
-
-/* Homepage */
-#dayContainer {
-  display: flex;
-}
-
-.dayBox {
-  width: 100px;
-  height: 100px;
-  border: 2px solid black;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 24px;
-  margin-right: 10px;
-  font-weight: 800;
-  background-color: #ca5513;
-}
-
-
 
 /* New Patient Form Page */
 .new-patient-form {
   flex-direction: column;
   align-items: center;
-  justify-content: center; 
-  max-width: 700px;
-  margin: 0 auto; /* Center form on the page */
+  justify-content: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  /* Center form on the page */
   padding: 20px;
   background: #ca5513;
   border: 1px solid #000000;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   font-weight: bold;
   text-align: center;
-  position: relative; 
+  position: relative;
 
 }
 
 .new-patient-form fieldset {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Two columns */
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  /* Two columns */
   gap: 20px;
   width: 100%;
   background-color: #ca5513;
   padding: 20px;
   border-radius: 5px;
   border: 1px solid #000000;
-  
+
 }
 
 .new-patient-form label {
@@ -205,37 +187,37 @@ body, html {
 .new-patient-form input,
 .new-patient-form select,
 .new-patient-form textarea {
-  width: 100%; /* Full width to align with grid layout */
+  width: 100%;
   padding: 10px;
-  margin-bottom: 10px; /* Space between form elements */
+  margin-bottom: 10px;
   border: 1px solid #000000;
   border-radius: 5px;
   font-weight: bold;
-  align-items: center;
+}
+
+.new-patient-form select {
+  height: 48px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-position: right 10px center;
+  background-repeat: no-repeat;
+}
+
+.new-patient-form input:focus,
+.new-patient-form select:focus,
+.new-patient-form textarea:focus {
+  outline: 2px solid #005aab;
+  /* High contrast outline for focused element */
 }
 
 .new-patient-form input[type="date"] {
   padding: 10px;
 }
 
-.new-patient-form .radio-group {
-  display: flex;
-  flex-wrap: wrap; 
-  gap: 10px; 
-}
-
-.new-patient-form .radio-group input[type="radio"] {
-  margin-right: 5px;
-}
-
-.new-patient-form .radio-group label {
-  margin-right: 0;
-  display: flex;
-  align-items: center;
-}
-
 .new-patient-form textarea {
-  resize: vertical; /* Allow vertical resize */
+  resize: vertical;
+  /* Allow vertical resize */
 }
 
 .new-patient-form button {
@@ -256,42 +238,54 @@ body, html {
 /* Responsive adjustments for smaller screens */
 @media (max-width: 768px) {
   .new-patient-form fieldset {
-    grid-template-columns: 1fr; /* Single column layout on small screens */
-  }
-
-  .new-patient-form {
-    padding: 10px;
+    flex-direction: column;
   }
 }
+
+.new-patient-form {
+  padding: 10px;
+}
+
 
 /* Accessibility Improvements */
 .new-patient-form input:focus,
 .new-patient-form select:focus,
 .new-patient-form textarea:focus {
-  outline: 2px solid #005aab; /* High contrast outline for focused element */
+  outline: 2px solid #005aab;
+  /* High contrast outline for focused element */
 }
 
 /* Modal Styles */
 .modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
   left: 0;
   top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0);
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
 }
 
 /* Modal Content/Box */
 .modal-content {
   background-color: #fefefe;
-  margin: 15% auto; /* 15% from the top and centered */
+  margin: 15% auto;
+  /* 15% from the top and centered */
   padding: 20px;
   border: 1px solid #888;
-  width: 80%; /* Could be more or less, depending on screen size */
+  width: 80%;
+  /* Could be more or less, depending on screen size */
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
@@ -311,41 +305,47 @@ body, html {
 }
 
 /*meds*/
-body, .med-list, .med-list * {
-    box-sizing: border-box;
-  }
-  
-  .site-header h1 {
-      color: #ffffff;
-      background-color: #ca5513;
-      padding: 20px;
-      text-align: center;
-  }
-  
-  .med-list {
-      background: #ffffff;
-      padding: 20px;
-  }
-  
-  .medication-items {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      margin-bottom: 20px;
-  }
-  
-  .medication-item {
-      display: flex;
-      justify-content: space-between;
-      background: #d9d9d9;
-      padding: 10px;
-  }
-  
-  .add-medication-btn {
-      background-color: #ca5513;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      cursor: pointer;
-  }
-  
+body,
+.med-list,
+.med-list * {
+  box-sizing: border-box;
+}
+
+.site-header h1 {
+  color: #ffffff;
+  background-color: #ca5513;
+  padding: 20px;
+  text-align: center;
+}
+
+.med-list {
+  background: #ffffff;
+  padding: 20px;
+  width: fit-content;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid #000000;
+}
+
+
+.medication-items {
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.medication-item {
+  display: flex;
+  justify-content: space-between;
+  background: #d9d9d9;
+  padding: 10px;
+}
+
+.add-medication-btn {
+  background-color: #ca5513;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
