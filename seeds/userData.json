@@ -12,6 +12,7 @@
         "address1": "123 Main St",
         "address2": null,
         "city": "Anytown",
+        "state": "AZ",
         "zipcode": "12345",
         "phone1": "123-456-7890",
         "phone2": null
@@ -29,6 +30,7 @@
         "address1": "123 Main St",
         "address2": null,
         "city": "Anytown",
+        "state": "AZ",
         "zipcode": "12345",
         "phone1": "123-456-7890",
         "phone2": null
