@@ -1,13 +1,31 @@
 <main id="page-container" class="main-container">
-    <!-- New Patient Form Page -->
-    <section class="new-patient-form">
-        <form id="patientForm">
-            <!-- The form fields will be injected here -->
-            <div id="validation-messages"></div>
-        </form>
-        <!-- Form Submission Button -->
-        <button type="submit" class="button submit-button">Submit</button>
-    </section>
-</main>
+        <!-- New Patient Form Page -->
+        <section class="new-patient-form">
+            <form id="patientForm" action="/submit-patient-form" method="POST">
+            {{#each formFields}}
+            <div class="mb-3">
+                <label for="{{this.id}}" class="form-label">{{this.label}}</label>
+                {{#ifCond this.type '===' 'textarea'}}
+                <textarea id="{{this.id}}" name="{{this.name}}" class="form-control" placeholder="{{this.placeholder}}" required>{{this.value}}</textarea>
+                {{else}}
+                <input type="{{this.type}}" id="{{this.id}}" name="{{this.name}}" class="form-control" placeholder="{{this.placeholder}}" value="{{this.value}}" required>
+                {{/ifCond}}
+            </div>
+            {{/each}}
+                <!-- The form fields will be injected here -->
+            <div id="validation-messages">
+                {{#if validationMessages}}
+                <ul>
+                    {{#each validationMessages}}
+                    <li>{{this}}</li>
+                    {{/each}}
+                </ul>
+                {{/if}}
+            </div>
+            <!-- Form Submission Button -->
+            <button type="submit" class="button submit-button">Submit</button>
+            </form>
+        </section>
+    </main>
 <script src="/js/createAccountForm.js"></script>
 <script src="/js/createAccount.js"></script>

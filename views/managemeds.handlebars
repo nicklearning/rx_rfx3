@@ -1,84 +1,93 @@
 <main id="page-container" class="main-container">
-    <section class="med-list">
-        <h2>Medication List</h2>
-        <table class="table">
-            <thead>
+        <section class="med-list">
+            <h2>Medication List</h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Medication Name</th>
+                        <th scope="col">Strength</th>
+                        <th scope="col">Dosage</th>
+                        <th scope="col">Frequency</th>
+                        <th scope="col">Route</th>
+                        <th scope="col">Duration</th>
+                        <th scope="col">Actions</th>
+                    </tr>
+                </thead>
+                <tbody class="medication-items">
+                {{#each medications}}
                 <tr>
-                    <th scope="col">Medication Name</th>
-                    <th scope="col">Strength</th>
-                    <th scope="col">Dosage</th>
-                    <th scope="col">Frequency</th>
-                    <th scope="col">Route</th>
-                    <th scope="col">Duration</th>
-                    <th scope="col">Actions</th>
+                    <td>{{this.name}}</td>
+                    <td>{{this.strength}}</td>
+                    <td>{{this.dosage}}</td>
+                    <td>{{this.frequency}}</td>
+                    <td>{{this.route}}</td>
+                    <td>{{this.duration}}</td>
+                    <td>
+                        <!-- Actions like Edit/Delete could be added here, using the medication ID -->
+                    </td>
                 </tr>
-            </thead>
-            <tbody class="medication-items">
-                <!-- Medication items will be added here dynamically -->
+                {{/each}}
             </tbody>
-        </table>
-        <button class="add-medication-btn btn btn-primary">+ Add New Medication</button>
-        <button class="print-medication-list-btn">Print Medication List</button>
-    </section>
-</main>
+            </table>
+            <button class="add-medication-btn btn btn-primary">+ Add New Medication</button>
+            <button class="print-medication-list-btn">Print Medication List</button>
+        </section>
+    </main>
 
-<!-- Medication Add Modal -->
-<div class="modal fade" id="medicationAddModal" tabindex="-1" aria-labelledby="medicationAddModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog">
+    <!-- Medication Add Modal -->
+    <div class="modal fade" id="medicationAddModal" tabindex="-1" aria-labelledby="medicationAddModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="medicationAddModalLabel">Add New Medication</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <form id="medicationForm">
-                    <div class="mb-3">
-                        <label for="medicationName" class="form-label">Medication Name</label>
-                        <input type="text" class="form-control" id="medicationName" placeholder="Example: Aspirin"
-                            required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="strength" class="form-label">Strength</label>
-                        <input type="text" class="form-control" id="strength" placeholder="Example: 500mg" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="dosage" class="form-label">Dosage</label>
-                        <input type="text" class="form-control" id="dosage" placeholder="Example: 1 Tablet" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="frequency" class="form-label">Frequency</label>
-                        <input type="text" class="form-control" id="frequency" placeholder="Example: Every 8 hours"
-                            required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="route" class="form-label">Route</label>
-                        <select class="form-select" id="route" required>
-                            <option value="">Select Route</option>
-                            <option value="Oral">Oral</option>
-                            <option value="Sublingual">Sublingual</option>
-                            <option value="Intravenous">Intravenous</option>
-                            <option value="Intramuscular">Intramuscular</option>
-                            <option value="Subcutaneous">Subcutaneous</option>
-                            <option value="Inhalation">Inhalation</option>
-                            <option value="Nasal">Nasal</option>
-                            <option value="Otic">Otic</option>
-                            <option value="Ocular">Ocular</option>
-                            <option value="Transdermal">Transdermal</option>
-                        </select>
-                    </div>
-                    <div class="mb-3">
-                        <label for="duration" class="form-label">Duration</label>
-                        <input type="text" class="form-control" id="duration" placeholder="Example: 7 days" required>
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary" id="saveMedication">Save Medication</button>
-            </div>
+          <div class="modal-header">
+            <h5 class="modal-title" id="medicationAddModalLabel">Add New Medication</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+    <form id="medicationForm">
+        <div class="mb-3">
+            <label for="medicationName" class="form-label">Medication Name</label>
+            <input type="text" class="form-control" id="medicationName" placeholder="Example: Aspirin" required>
         </div>
-    </div>
+        <div class="mb-3">
+            <label for="strength" class="form-label">Strength</label>
+            <input type="text" class="form-control" id="strength" placeholder="Example: 500mg" required>
+        </div>
+        <div class="mb-3">
+            <label for="dosage" class="form-label">Dosage</label>
+            <input type="text" class="form-control" id="dosage" placeholder="Example: 1 Tablet" required>
+        </div>
+        <div class="mb-3">
+            <label for="frequency" class="form-label">Frequency</label>
+            <input type="text" class="form-control" id="frequency" placeholder="Example: Every 8 hours" required>
+        </div>
+        <div class="mb-3">
+            <label for="route" class="form-label">Route</label>
+            <select class="form-select" id="route" required>
+              <option value="">Select Route</option>
+              <option value="Oral">Oral</option>
+              <option value="Sublingual">Sublingual</option>
+              <option value="Intravenous">Intravenous</option>
+              <option value="Intramuscular">Intramuscular</option>
+              <option value="Subcutaneous">Subcutaneous</option>
+              <option value="Inhalation">Inhalation</option>
+              <option value="Nasal">Nasal</option>
+              <option value="Otic">Otic</option>
+              <option value="Ocular">Ocular</option>
+              <option value="Transdermal">Transdermal</option>
+            </select>
+          </div>
+        <div class="mb-3">
+            <label for="duration" class="form-label">Duration</label>
+            <input type="text" class="form-control" id="duration" placeholder="Example: 7 days" required>
+        </div>
+    </form>
 </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" id="saveMedication">Save Medication</button>
+          </div>
+        </div>
+      </div>
+    </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
 <script src="/js/managemeds.js"></script>

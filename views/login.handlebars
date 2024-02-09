@@ -4,13 +4,17 @@
         <form class="login-form">
             <label for="email-login" class="label">Email</label>
             <input type="email" id="email-login" name="email" class="input email-login" placeholder="Enter your email"
-                required>
-            <span class="error-message" aria-live="polite"></span>
+                 value="{{email}}" required>
+            {{#if emailError}}
+            <span class="error-message" aria-live="polite">{{emailError}}</span>
+            {{/if}}
 
             <label for="password" class="label">Password</label>
             <input type="password" id="password-login" name="password" class="input password"
                 placeholder="Enter your password" required>
-            <span class="error-message" aria-live="polite"></span>
+            {{#if passwordError}}
+            <span class="error-message" aria-live="polite">{{passwordError}}</span>
+            {{/if}}
 
             <button type="submit" class="button submit-button">Submit</button>
         </form>
