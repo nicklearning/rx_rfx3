@@ -1,0 +1,36 @@
+[
+    {
+        "firstName": "John",
+        "middleName": null,
+        "lastName": "Doe",
+        "dateOfBirth": "1990-05-15",
+        "gender": "Male",
+        "height": 180,
+        "weight": 75,
+        "email": "johndoe@example.com",
+        "password": "password123",
+        "address1": "123 Main St",
+        "address2": null,
+        "city": "Anytown",
+        "zipcode": "12345",
+        "phone1": "123-456-7890",
+        "phone2": null
+    },
+    {
+        "firstName": "Mike",
+        "middleName": null,
+        "lastName": "Doe",
+        "dateOfBirth": "1990-05-15",
+        "gender": "Male",
+        "height": 180,
+        "weight": 75,
+        "email": "mikedoe@example.com",
+        "password": "password123",
+        "address1": "123 Main St",
+        "address2": null,
+        "city": "Anytown",
+        "zipcode": "12345",
+        "phone1": "123-456-7890",
+        "phone2": null
+    }
+]
